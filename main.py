@@ -29,7 +29,7 @@ app.add_middleware(
 # ----------------------------------------------------
 # 2️⃣ Model Loading (Full Model)
 # ----------------------------------------------------
-MODEL_PATH = "soil_vgg_model.pth"
+MODEL_PATH = "soil_classifier_full_vgg16.pth.pth"
 model = None
 
 def get_model():
@@ -120,3 +120,4 @@ async def predict(file: UploadFile = File(...)):
         import traceback
         traceback.print_exc()
         return JSONResponse({"error": str(e)}, status_code=500)
+
